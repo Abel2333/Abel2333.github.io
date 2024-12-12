@@ -45,6 +45,8 @@ echo "bundle update"
 bundle update
 
 # Finish the initialization
-echo -e "Done\n"
-echo -e "Run \033[1mbundle exec jekyll serve --livereload --host 0.0.0.0\033[0m to test Jekyll"
+echo -e "\033[1;32mDone configuring your Jekyll site! Here are the next steps:\033[00m"
+echo -e "1. Modify the baseurl and url in \`_config.yml\' file."
+echo -e "2. Run \033[1mbundle exec jekyll serve --livereload --host 0.0.0.0\033[0m to test Jekyll."
+echo -e "3. Commit and pull & push changes."
 
