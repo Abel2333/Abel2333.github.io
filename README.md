@@ -1,5 +1,7 @@
 # This is my personal website for some notes
 
+Use Jekyll Theme minimal mistake
+
 ## Build Step
 
 **Do this only when you want a empty site!!!**
