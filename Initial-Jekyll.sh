@@ -12,14 +12,10 @@ jekyll -v
 echo -e "\nInitial Bundle"
 bundle init
 
-# Add jekyll support
-echo -e "\nInstall Jekyll"
-bundle add "jekyll" --version 3.10.0
-
 # Create new Site
-echo -e "\nCreate a new Jekyll site without the default theme."
-# jekyll new . --skip-bundle --force
-bundle exec jekyll new . --skip-bundle --force --blank
+echo -e "\nCreate a new Jekyll site with the default theme."
+jekyll new . --skip-bundle --force
+# bundle exec jekyll new . --skip-bundle --force --blank
 
 # Jekyll generates  a default `.gitignore` file, but not enough
 # Thus, create a new one to replace it.
@@ -35,8 +31,8 @@ echo "_site" >> ${GITIGNORE}
 echo ".sass-cache" >> ${GITIGNORE}
 echo ".jekyll-cache" >> ${GITIGNORE}
 echo ".jekyll-metadata" >> ${GITIGNORE}
+echo "Gemfile.lock" >> ${GITIGNORE}
 echo ".bundle" >> ${GITIGNORE}
-echo "vendor/" >> ${GITIGNORE}
 echo "**/.DS_Store" >> ${GITIGNORE}
 
 # Configure bundle to support GitHub Pages

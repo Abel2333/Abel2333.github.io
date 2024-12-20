@@ -27,7 +27,7 @@ baseurl                  : # the subpath of your site, e.g. "/blog"
 repository               : "Abel2333/Abel2333.github.io" # GitHub username/repo-name
 teaser                   : "/assets/images/teaser_500x300.JPG" # path of fallback teaser image, e.g. "/assets/images/500x300.png"
 logo                     : "/assets/images/leaf_512x512.png" # path of logo image to display in the masthead, e.g. "/assets/images/88x88.png"
-masthead_title           : "Better Life ^_^" # overrides the website title displayed in the masthead, use " " for no title
+masthead_title           : "Blogs ^_^" # overrides the website title displayed in the masthead, use " " for no title
 breadcrumbs              : true # true, false (default)
 words_per_minute         : 180
 enable_copy_code_button  : true # true, false (default)
