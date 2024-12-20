@@ -1,13 +1,20 @@
 ---
+layout: compress
 ---
 
 <!doctype html>
 {% include copyright.html %}
 <html lang="{{ site.locale | replace: "_", "-" | default: "en" }}" class="no-js">
+  <!-- MathJax -->
+  <script async src="{{ '/assets/js/data/mathjax.js' | relative_url }}"></script>
+  <script async src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="{{ '/assets/js/lib/mathjax/tex-chtml.js' | relative_url }}"></script>
+
   <head>
     {% include head.html %}
     {% include head/custom.html %}
   </head>
+
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}" dir="{% if site.rtl %}rtl{% else %}ltr{% endif %}">
     {% include_cached skip-links.html %}

@@ -1,7 +1,8 @@
 ---
 title:  "NPOI in CSharp"
 date:   2024-12-16 09:14 +0800
-categories: code CSharp
+categories: code
+tag: CSharp Excel
 ---
 
 ## What is NPOI?
