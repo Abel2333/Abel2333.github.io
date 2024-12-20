@@ -1,5 +1,4 @@
 ---
-layout: single
 title:  "NPOI in CSharp"
 date:   2024-12-16 09:14 +0800
 categories: code CSharp
@@ -55,7 +54,7 @@ instead of a text file. We need write it to a `MemoryStream` within `workbook.Wr
 first, and then convert it to bytes data, `var buf = stream.ToArray();`,
 writing byte buffer to `FileStream`:
 
-```CS
+```cs
 fs.Write(buf, 0, buf.Length);
 fs.Flush();
 ```
@@ -66,7 +65,7 @@ It is easy to notice that C# has different data type to store data. When read
 from excel, NPOI could not set the data type automatically. We need to
 implement by ourself:
 
-```CS
+```cs
 private static object? GetCellValue(ICell cell)
 {
     if (cell == null)
@@ -96,7 +95,7 @@ strings, could be done here.
 
 And, for the same reason, we should have a `SetCellValue` method:
 
-```CS
+```cs
 private static void SetCellValue(ICell cell, object obj)
 {
     switch (obj)
@@ -139,7 +138,7 @@ Thus, for each cell, we should figure out wether it is in a merged cell or not.
 If it is, set the value equal to the first row, the first column in that
 merged cell.
 
-```CS
+```cs
 private static object? GetMergedCellValue(ISheet sheet, int rowIndex, int colIndex)
 {
     foreach (CellRangeAddress range in sheet.MergedRegions)
