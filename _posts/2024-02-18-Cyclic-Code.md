@@ -1,6 +1,6 @@
 ---
 title: Cyclic Code
-data: 2024-2-18 10:40 +0800
+data: 2024-02-18 10:40 +0800
 categories: math
 tag: encode decode
 ---
@@ -90,7 +90,7 @@ Therefore we get follow theorem.
 
 **Theorem (1)**: Fix an integer $n>1$. Let $g(x)\in\mathbb{F}_2$ divide
 the polynomial $x^n-1$. Assume the degree of $g(x)$ is $n-k$ for some
-$0\leq k\leq n$. COnsider the set of polynomials
+$0\leq k\leq n$. Consider the set of polynomials
 
 $$
 \mathcal{P_g}:=\{g(x)\cdot\alpha(x)\pmod{x^n-1}\mid\alpha(x)\in
@@ -122,8 +122,8 @@ $\alpha(x)g_1(x)-\alpha(x)g_2(x)$ are also in $C$. Therefore,
 $g_1(x)-g_2(x)$ is the generator polynomial of $C$. This is a
 contradiction so the polynomial $g(x)$ of minimal degree must be unique.
 
-**Secondly, if a cyclic code $C$ can be constructed by $g(x) via
-Theorem(1), the $g(x)$ with minimal degree is unique.**
+**Secondly, if a cyclic code $C$ can be constructed by $g(x)$ via
+Theorem(1), $g(x)$ divides $x^n-1$.**
 
 Assume $g(x)$ does not divide $x^n-1$. Thus
 
@@ -131,7 +131,7 @@ $$
 x^n-1=g(x)\beta(x)+r(x),\qquad (\beta(x), r(x) \in \mathbb{F}_2[x])
 $$
 
-And $r(x)$ is remainder polynomial which must have degree smaller than
+And $r(x)$ is remainder polynomial which must have smaller degree than
 $g(x)$. Thus:
 
 $$
@@ -141,7 +141,8 @@ r(x)\equiv&-g(x)\beta(x)\pmod{x^n-1}\\
 \end{align}.
 $$
 
-In this case, $r(x)$ is a generator polynomial which is a constradiction.
+In this case, $r(x)$ is a codeword in $C$, and must higher degree than $g(x)$,
+which is a constradiction.
 
 In conclusion, we have theorem 2:
 
@@ -154,6 +155,14 @@ which has the following properties.
 > 3. The code $C$ can be constructed using $g(x)$ as in Theorem (1).
 
 The polynomial $g(x)$ is called the generator polynomial for the code $C$.
+
+The polynomial $h(x)$ which determined by
+
+$$
+g(x)h(x) = x^n-1
+$$
+
+is the check polynomial for the code $C$.
 
 ## Example
 
@@ -169,3 +178,23 @@ as $1+x^7=(1+x)(1+x+x^3)(1+x^2+x^3)$.
 > - $g(x)=(1+x)(1+x^2+x^3), \qquad C=[7, 3]\ code$
 > - $g(x)=(1+x+x^3)(1+x^2+x^3), \qquad C=[7, 1]\ code$
 > - $g(x)=1+x^7, \qquad C=\{0000000\}=[7, 0]\ code$
+
+## Check
+
+**Theorem (3):** If $h(x)$ is the check polynomial of cyclic code $C$,
+then
+
+$$
+C(x) = \left\{ c(x)\in\mathbb{F}_2\{x\}\mid c(x)h(x)\equiv 0\pmod{x^n-1} \right\}
+$$
+
+**PROVE:**
+As metioned-above, $c(x)=g(x)\alpha(x)$. Hence
+
+$$
+\begin{aligned}
+c(x)h(x)\equiv & g(x)\alpha(x)h(x) \pmod{x^n-1}\\
+\equiv & (x^n-1)\alpha(x) \pmod{x^n-1}\\
+\equiv & 0 \pmod{x^n1}
+\end{aligned}
+$$
